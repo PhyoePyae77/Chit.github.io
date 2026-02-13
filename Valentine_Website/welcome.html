@@ -1,0 +1,25 @@
+
+<html><head><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="msg" class="glass"><h2>Chit</h2></div>
+<div id="opt" class="glass" style="display:none;">
+<button onclick="go('letter.html')">Love Letter</button>
+<button onclick="go('photo.html')">Photo</button>
+<button onclick="go('music.html')">Music</button>
+<div id="next"></div>
+</div>
+<script>
+let c={l:false,p:false,m:false};
+setTimeout(()=>{
+document.getElementById('msg').style.display='none';
+document.getElementById('opt').style.display='block';
+},5000);
+function go(p){
+if(p=='letter.html')c.l=true;
+if(p=='photo.html')c.p=true;
+if(p=='music.html')c.m=true;
+location.href=p;
+localStorage.setItem("check",JSON.stringify(c));
+}
+</script>
+</body></html>
